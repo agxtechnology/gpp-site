@@ -31,6 +31,7 @@ export default function HeroSection() {
           src="/hero-bg.jpg"
           alt="Gopal Picture Palace workshop"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
           quality={90}
@@ -49,8 +50,8 @@ export default function HeroSection() {
         {/* Decorative line top */}
         <div className="flex items-center justify-center gap-4 mb-8 animate-fade-in-down">
           <span className="h-[1px] w-16 bg-gradient-to-r from-transparent to-[#c9a84c]/60" />
-          <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#c9a84c]/80 font-light">
-            Est. Since Generations
+          <span className="text-[10px] sm:text-xs tracking-[0.4em] uppercase text-[#c9a84c]/90 font-medium">
+            Est. 25+ Years of Excellence
           </span>
           <span className="h-[1px] w-16 bg-gradient-to-l from-transparent to-[#c9a84c]/60" />
         </div>
@@ -78,11 +79,11 @@ export default function HeroSection() {
         {/* Tagline */}
         <p
           id="hero-tagline"
-          className="text-base sm:text-lg md:text-xl text-white/50 font-light tracking-wider max-w-2xl mx-auto leading-relaxed animate-fade-in"
+          className="text-base sm:text-lg md:text-xl text-white/60 font-light tracking-wider max-w-2xl mx-auto leading-relaxed animate-fade-in"
         >
-          Premium Glass Framing & Bespoke Photo Frames
+          25+ Years of Master Picture & Glass Framing
           <br className="hidden sm:block" />
-          <span className="text-white/30">—</span> Preserving Your Precious Memories in Art
+          <span className="text-white/30">—</span> Preserving Your Precious Memories in Timeless Art
         </p>
 
         {/* CTA Buttons */}

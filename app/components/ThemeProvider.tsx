@@ -13,11 +13,13 @@ type Theme = "light" | "dark";
 interface ThemeContextValue {
   theme: Theme;
   toggleTheme: () => void;
+  setTheme: (theme: Theme) => void;
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
   theme: "dark",
   toggleTheme: () => {},
+  setTheme: () => {},
 });
 
 export function useTheme() {
@@ -25,63 +27,62 @@ export function useTheme() {
 }
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setThemeState] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Check localStorage first, then system preference
+    // 1. Check localStorage first
     const stored = localStorage.getItem("gpp-theme") as Theme | null;
-    if (stored) {
-      setTheme(stored);
+    if (stored === "light" || stored === "dark") {
+      setThemeState(stored);
+      applyTheme(stored);
     } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setTheme(prefersDark ? "dark" : "light");
+      // 2. Fallback to system preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initial = prefersDark ? "dark" : "light";
+      setThemeState(initial);
+      applyTheme(initial);
     }
   }, []);
 
-  // Listen for system preference changes
+  // Listen for system preference changes (only if user hasn't explicitly set preference)
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e: MediaQueryListEvent) => {
       const stored = localStorage.getItem("gpp-theme");
       if (!stored) {
-        setTheme(e.matches ? "dark" : "light");
+        const next = e.matches ? "dark" : "light";
+        setThemeState(next);
+        applyTheme(next);
       }
     };
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
-  // Apply class to <html>
-  useEffect(() => {
+  const applyTheme = (t: Theme) => {
     const root = document.documentElement;
-    if (theme === "dark") {
+    if (t === "dark") {
       root.classList.add("dark");
     } else {
       root.classList.remove("dark");
     }
-  }, [theme]);
+  };
+
+  const setTheme = (next: Theme) => {
+    setThemeState(next);
+    localStorage.setItem("gpp-theme", next);
+    applyTheme(next);
+  };
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    localStorage.setItem("gpp-theme", next);
   };
 
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return (
-      <div style={{ visibility: "hidden" }}>
-        {children}
-      </div>
-    );
-  }
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
