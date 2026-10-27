@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Celebrating over 25 years of master craftsmanship, preserving precious memories and artworks in timeless handcrafted frames.",
     url: "https://gopalpicturepalace.com/about",
     siteName: "Gopal Picture Palace",
-    locale: "en_IN",
+    locale: "en_LK",
     type: "website",
     images: [
       {
@@ -78,7 +78,7 @@ const aboutSchema = {
         "foundingDate": "2001",
         "description":
           "Master picture framing studio with over 25 years of excellence and 50,000+ custom frames delivered.",
-        "telephone": "+919876543210",
+        "telephone": "+94372226934",
       },
     },
   ],

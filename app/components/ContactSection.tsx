@@ -69,7 +69,8 @@ export default function ContactSection() {
                   </h3>
                   <p className="mt-1 text-sm text-neutral-600 dark:text-white/40">
                     Gopal Picture Palace<br />
-                    Main Market Road, City Centre
+                    21/4, Chathurassa Mawatha,<br />
+                    Kurunegala, Sri Lanka
                   </p>
                 </div>
               </div>
@@ -84,11 +85,23 @@ export default function ContactSection() {
                   <h3 className="text-xs tracking-[0.15em] uppercase text-neutral-800 dark:text-white/70 font-semibold">
                     Phone & WhatsApp
                   </h3>
-                  <p className="mt-1 text-sm text-neutral-600 dark:text-white/40">
-                    <a href="tel:+919876543210" className="hover:text-[#b8943f] dark:hover:text-[#c9a84c] transition-colors">
-                      +91 98765 43210
-                    </a>
-                  </p>
+                  <div className="mt-1 space-y-1">
+                    <p className="text-sm text-neutral-600 dark:text-white/40">
+                      <a href="tel:+94372226934" className="hover:text-[#b8943f] dark:hover:text-[#c9a84c] transition-colors">
+                        037 2226934
+                      </a>
+                    </p>
+                    <p className="text-sm text-neutral-600 dark:text-white/40">
+                      <a href="tel:+94776729169" className="hover:text-[#b8943f] dark:hover:text-[#c9a84c] transition-colors">
+                        077 6729169
+                      </a>
+                    </p>
+                    <p className="text-sm text-neutral-600 dark:text-white/40">
+                      <a href="tel:+94765570370" className="hover:text-[#b8943f] dark:hover:text-[#c9a84c] transition-colors">
+                        076 5570370
+                      </a>
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -140,7 +153,7 @@ export default function ContactSection() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-neutral-300 dark:border-white/10 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-white/20 focus:border-[#c9a84c] focus:outline-none transition-colors"
-                    placeholder="E.g. Rajesh Kumar"
+                    placeholder="E.g. Kamal Perera"
                   />
                 </div>
                 <div>
@@ -158,7 +171,7 @@ export default function ContactSection() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full bg-transparent border-b border-neutral-300 dark:border-white/10 py-3 text-sm text-neutral-900 dark:text-white placeholder-neutral-400 dark:placeholder-white/20 focus:border-[#c9a84c] focus:outline-none transition-colors"
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="+94 77 672 9169"
                   />
                 </div>
               </div>

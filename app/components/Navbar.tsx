@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 const navLinks = [
@@ -53,44 +54,37 @@ export default function Navbar() {
         id="main-navbar"
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
           isScrolled
-            ? "bg-[#faf8f5]/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-neutral-200/80 dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.4)] py-3"
-            : "bg-gradient-to-b from-black/60 via-black/20 to-transparent py-5"
+            ? "bg-[#faf8f5]/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-neutral-200/80 dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.4)] py-2"
+            : "bg-gradient-to-b from-black/60 via-black/20 to-transparent py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            {/* Brand Name - Clearly visible in both light & dark mode */}
+            {/* Brand Logo */}
             <Link
               href="/"
               id="nav-brand"
               className="group flex items-center gap-3 relative z-10"
               aria-label="Gopal Picture Palace Home"
             >
-              <span
-                className={`text-lg md:text-xl font-extrabold tracking-[0.22em] uppercase transition-colors duration-300 ${
-                  isScrolled
-                    ? "text-neutral-950 dark:text-white group-hover:text-[#b8943f] dark:group-hover:text-[#c9a84c]"
-                    : "text-white group-hover:text-[#c9a84c] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
+              <div
+                className={`relative transition-all duration-500 ${
+                  isScrolled ? "h-10 w-[140px] md:h-12 md:w-[180px]" : "h-12 w-[160px] md:h-14 md:w-[200px]"
                 }`}
               >
-                GPP
-              </span>
-              <span
-                className={`hidden sm:block h-4 w-[1px] transition-colors duration-300 ${
-                  isScrolled
-                    ? "bg-neutral-300 dark:bg-white/20"
-                    : "bg-white/30"
-                }`}
-              />
-              <span
-                className={`hidden sm:block text-xs tracking-[0.16em] uppercase font-medium transition-colors duration-300 ${
-                  isScrolled
-                    ? "text-neutral-600 dark:text-white/60"
-                    : "text-white/80 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]"
-                }`}
-              >
-                Gopal Picture Palace
-              </span>
+                <Image
+                  src="/Golden Lotus GPP Luxury Logo.png"
+                  alt="Gopal Picture Palace - Golden Lotus Logo"
+                  fill
+                  sizes="200px"
+                  className={`object-contain object-left transition-all duration-500 ${
+                    isScrolled
+                      ? "brightness-100 dark:brightness-100"
+                      : "brightness-0 invert drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+                  }`}
+                  priority
+                />
+              </div>
             </Link>
 
             {/* Desktop Navigation Links & Controls */}
@@ -245,13 +239,15 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(false)}
             className="flex items-center gap-3"
           >
-            <span className="text-xl font-black tracking-[0.2em] uppercase text-neutral-950 dark:text-white">
-              GPP
-            </span>
-            <span className="h-4 w-[1px] bg-neutral-300 dark:bg-white/20" />
-            <span className="text-xs tracking-[0.14em] uppercase text-neutral-600 dark:text-white/60 font-medium">
-              Gopal Picture Palace
-            </span>
+            <div className="relative h-10 w-[140px]">
+              <Image
+                src="/Golden Lotus GPP Luxury Logo.png"
+                alt="Gopal Picture Palace"
+                fill
+                sizes="140px"
+                className="object-contain object-left"
+              />
+            </div>
           </Link>
 
           <button

@@ -39,7 +39,7 @@ export default function CTABanner() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#d4b55c] to-[#c9a84c] translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
           </Link>
           <a
-            href="tel:+919876543210"
+            href="tel:+94372226934"
             id="cta-call"
             className="px-10 py-4 border border-neutral-300 dark:border-[#c9a84c]/20 text-neutral-700 dark:text-[#c9a84c]/80 text-xs tracking-[0.2em] uppercase font-medium hover:border-[#c9a84c] hover:text-[#b8943f] dark:hover:text-[#c9a84c] transition-all duration-300 bg-white/50 dark:bg-transparent backdrop-blur-sm"
           >

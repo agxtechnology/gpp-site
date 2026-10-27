@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Visit our framing workshop or connect with our master framers. 25+ years of custom framing excellence.",
     url: "https://gopalpicturepalace.com/contact",
     siteName: "Gopal Picture Palace",
-    locale: "en_IN",
+    locale: "en_LK",
     type: "website",
     images: [
       {
@@ -72,12 +72,12 @@ const contactSchema = {
       "mainEntity": {
         "@type": "LocalBusiness",
         "name": "Gopal Picture Palace",
-        "telephone": "+919876543210",
+        "telephone": "+94372226934",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Main Market Road",
-          "addressLocality": "City Centre",
-          "addressCountry": "IN",
+          "streetAddress": "21/4, Chathurassa Mawatha",
+          "addressLocality": "Kurunegala",
+          "addressCountry": "LK",
         },
         "openingHours": "Mo-Sa 10:00-20:30",
       },

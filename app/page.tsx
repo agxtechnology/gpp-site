@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Crafting exquisite custom photo frames and museum-grade glass framing for over 25 years. Preserving your precious memories in timeless art.",
     url: "https://gopalpicturepalace.com",
     siteName: "Gopal Picture Palace",
-    locale: "en_IN",
+    locale: "en_LK",
     type: "website",
     images: [
       {
@@ -76,13 +76,13 @@ const homeSchema = {
       "logo": "https://gopalpicturepalace.com/service-photo-frames.jpg",
       "image": "https://gopalpicturepalace.com/hero-bg.jpg",
       "description": "Premier picture and glass framing studio with 25+ years of master craftsmanship.",
-      "telephone": "+919876543210",
+      "telephone": "+94372226934",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Main Market Road",
-        "addressLocality": "City Centre",
-        "addressCountry": "IN",
+        "streetAddress": "21/4, Chathurassa Mawatha",
+        "addressLocality": "Kurunegala",
+        "addressCountry": "LK",
       },
       "openingHoursSpecification": [
         {
